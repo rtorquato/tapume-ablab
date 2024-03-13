@@ -1,0 +1,595 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.2 | 20191019
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+input,
+label,
+select,
+button,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: none;
+  line-height: 1;
+  /* Browsers have different default form fonts */
+  font-size: 13px;
+  font-family: Arial;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus {
+  outline: 0;
+}
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea {
+  box-sizing: content-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  box-sizing: border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px;
+}
+
+/* File Uploads
+-----------------------------------------------*/
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+  display: none;
+}
+
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type=reset],
+input[type=button],
+input[type=submit] {
+  /* Fix IE7 display bug */
+  overflow: visible;
+  width: auto;
+}
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/* Textarea
+-----------------------------------------------*/
+textarea {
+  /* Move the label to the top */
+  vertical-align: top;
+  /* Turn off scroll bars in IE unless needed */
+  overflow: auto;
+}
+
+/* Selects
+-----------------------------------------------*/
+select[multiple] {
+  /* Move the label to the top */
+  vertical-align: top;
+}
+
+@font-face {
+  font-family: "Roc Grotesk Wide Bold";
+  src: url(../../src/fonts/Roc-Grotesk-Wide-Bold.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roc Grotesk Bold";
+  src: url(../../src/fonts/Roc-Grotesk-Bold.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roc Grotesk Medium";
+  src: url(../../src/fonts/Roc-Grotesk-Medium.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roc Grotesk Light";
+  src: url(../../src/fonts/Roc-Grotesk-Light.otf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roc Grotesk Wide Light";
+  src: url(../../src/fonts/Roc-Grotesk-Wide-Light.otf);
+  font-style: normal;
+}
+:root {
+  --font-wBold: "Roc Grotesk Wide Bold";
+  --font-bold: "Roc Grotesk Bold";
+  --font-medium: "Roc Grotesk Medium";
+  --font-wLight: "Roc Grotesk Wide Light";
+  --font-light: "Roc Grotesk Light";
+  --color-bg: #403748;
+  --color-submit: #ab72ff;
+  --color-input: #756b7d;
+  --color-purpleDark: #b76afd;
+  --color-grayLight: #fcfbf3;
+  --color-white: #ffffff;
+  --color-content-1: #FFFFFF;
+  --color-content-2: #F3F3F3;
+  --color-content-3: #F9F9F9;
+  --color-content-4: #FFF000;
+  --color-content-5: #000FFF;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: 90rem;
+  height: 100%;
+  margin: auto;
+  --row1: 8;
+  --row2: 40;
+  --row3: 11;
+  --row4: 6;
+  --row5: 14;
+  --row6: 8;
+  --row7: 5;
+}
+@media (min-width: 768px) {
+  .container {
+    --row1: 8;
+    --row2: 48;
+    --row3: 11;
+    --row4: 6;
+    --row5: 14;
+    --row6: 8;
+    --row7: 5;
+  }
+}
+.container .contents p {
+  text-align: center;
+}
+.container .contents.content-1 {
+  height: calc(1% * var(--row1));
+  display: flex;
+  justify-content: end;
+}
+.container .contents.content-1 .xxv {
+  width: auto;
+  margin-right: 1rem;
+  height: 80%;
+}
+@media (min-width: 768px) {
+  .container .contents.content-1 .xxv {
+    height: 100%;
+  }
+}
+.container .contents.content-2 {
+  height: calc(1% * var(--row2));
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.container .contents.content-2 .logoAB {
+  width: auto;
+  height: 19%;
+  transition: 1s ease;
+  transform: rotateX(90deg);
+}
+.container .contents.content-2 .logoAB.active {
+  transition: 1s ease;
+  transform: rotateX(0deg);
+}
+.container .contents.content-2 .contentAB {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .contents.content-2 .contentAB .contentAnimated {
+  position: absolute;
+  width: auto;
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+.container .contents.content-2 .contentAB .contentAnimated .logoCenter {
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+  transform: rotateX(90deg);
+}
+.container .contents.content-2 .contentAB .contentAnimated .logoCenter.active {
+  transition: 1s ease;
+  transform: rotateX(0deg);
+}
+.container .contents.content-2 .contentAB .contentAnimated .arrows {
+  position: absolute;
+}
+.container .contents.content-2 .contentAB .contentAnimated .arrows.arrowt {
+  top: 24.5%;
+  left: 41.3%;
+  width: 21.5%;
+  opacity: 0;
+  transform: scale(0.25) rotate(10deg);
+  transition: 1s ease;
+}
+.container .contents.content-2 .contentAB .contentAnimated .arrows.arrowt.active {
+  top: -9.5%;
+  left: 60%;
+  width: 19.5%;
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  transition: 0.8s ease;
+}
+@media (min-width: 768px) {
+  .container .contents.content-2 .contentAB .contentAnimated .arrows.arrowt.active {
+    top: -10.5%;
+    left: 57.9%;
+    width: 21.5%;
+  }
+}
+.container .contents.content-2 .contentAB .contentAnimated .arrows.arrowb {
+  bottom: 26.5%;
+  right: 42%;
+  width: 21.5%;
+  opacity: 0;
+  transform: scale(0.3) rotate(10deg);
+  transition: 1s ease;
+}
+.container .contents.content-2 .contentAB .contentAnimated .arrows.arrowb.active {
+  bottom: -17.1%;
+  right: 50.2%;
+  width: 23.2%;
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.8s ease;
+}
+@media (min-width: 768px) {
+  .container .contents.content-2 .contentAB .contentAnimated .arrows.arrowb.active {
+    bottom: -14.4%;
+    right: 57.2%;
+    width: 25%;
+  }
+}
+.container .contents.content-3 {
+  height: calc(1% * var(--row3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .contents.content-3 h1 {
+  color: var(--color-grayLight);
+  font-family: var(--font-wBold);
+  font-size: calc(1.45rem + 3.15 * (100vw - 20rem) / 44);
+}
+@media (min-width: 768px) {
+  .container .contents.content-3 h1 {
+    font-size: calc(3.4rem + 0.7 * (100vw - 48rem) / 42);
+  }
+}
+@media (min-width: 1440px) {
+  .container .contents.content-3 h1 {
+    font-size: 4.15rem;
+  }
+}
+.container .contents.content-3 h1 span {
+  font-family: var(--font-wLight);
+}
+.container .contents.content-4 {
+  height: calc(1% * var(--row4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .contents.content-4 p {
+  font-size: calc(1rem + 0.3 * (100vw - 20rem) / 44);
+  color: var(--color-grayLight);
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .container .contents.content-4 p {
+    font-size: 1.3rem;
+  }
+}
+.container .contents.content-4 p.medium {
+  font-family: var(--font-medium);
+}
+.container .contents.content-5 {
+  height: calc(1% * var(--row5));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+@media (min-width: 768px) {
+  .container .contents.content-5 {
+    padding: 0;
+  }
+}
+.container .contents.content-5 p {
+  font-size: calc(1rem + 0.3 * (100vw - 20rem) / 44);
+  color: var(--color-grayLight);
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .container .contents.content-5 p {
+    font-size: 1.3rem;
+  }
+}
+.container .contents.content-5 p.medium {
+  font-family: var(--font-medium);
+}
+.container .contents.content-5 .sucess {
+  padding: 2rem 0;
+  opacity: 0;
+  height: 0;
+  transform: translateX(-100%);
+  transition: 0.5s ease;
+}
+.container .contents.content-5 .sucess.active {
+  height: inherit;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.container .contents.content-6 {
+  height: calc(1% * var(--row6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .container .contents.content-6 {
+    gap: 0.25rem;
+  }
+}
+.container .contents.content-6 p {
+  font-size: calc(1rem + 0.3 * (100vw - 20rem) / 44);
+  color: var(--color-grayLight);
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .container .contents.content-6 p {
+    font-size: 1.3rem;
+  }
+}
+.container .contents.content-6 p.medium {
+  font-family: var(--font-medium);
+}
+.container .contents.content-7 {
+  height: calc(1% * var(--row7));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .contents.content-7 p {
+  font-size: calc(0.8rem + 0.5 * (100vw - 20rem) / 44);
+  color: var(--color-grayLight);
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .container .contents.content-7 p {
+    font-size: 1.3rem;
+  }
+}
+.container .contents.content-7 p.light {
+  font-family: var(--font-medium);
+}
+.container .contents .contactLink {
+  text-decoration: none;
+  color: var(--color-purpleDark);
+  font-family: var(--font-bold);
+}
+.container .contents .contactLink.address {
+  font-family: var(--font-light);
+  color: var(--color-grayLight);
+}
+
+.box-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.box-form #formMail {
+  transform: translateX(0);
+  padding: 0 0.6rem;
+}
+.box-form #formMail.send {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.box-form #formMail.send.finish {
+  display: none;
+}
+.box-form #formMail .form-control {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+@media (min-width: 768px) {
+  .box-form #formMail .form-control {
+    flex-direction: row;
+    gap: 0rem;
+  }
+}
+.box-form #formMail .form-control input {
+  width: 100%;
+  font-size: calc(0.8rem + 0.766 * (100vw - 20rem) / 44);
+  height: calc(2rem + 3 * (100vw - 20rem) / 44);
+  background-color: #756b7d;
+  text-align: center;
+  color: var(--color-grayLight);
+}
+@media (min-width: 768px) {
+  .box-form #formMail .form-control input {
+    width: 40%;
+    height: 3.6rem;
+    font-size: 1.3rem;
+  }
+}
+.box-form #formMail .form-control input + input {
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+}
+@media (min-width: 768px) {
+  .box-form #formMail .form-control input + input {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
+.box-form #formMail .form-control input::-moz-placeholder {
+  color: var(--color-grayLight);
+}
+.box-form #formMail .form-control input:-ms-input-placeholder {
+  color: var(--color-grayLight);
+}
+.box-form #formMail .form-control input::placeholder {
+  color: var(--color-grayLight);
+}
+.box-form button[type=submit] {
+  width: 25%;
+  height: calc(2rem + 3 * (100vw - 20rem) / 44);
+  outline: none;
+  border: none;
+  background-color: var(--color-submit);
+  background-size: 50%;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .box-form button[type=submit] {
+    width: 5.2rem;
+    height: 3.6rem;
+  }
+}
+.box-form button[type=submit] img {
+  width: 130%;
+  transform: translateX(0rem);
+  transition: all 0.3s ease-in-out;
+}
+.box-form button[type=submit]:hover img {
+  transform: translateX(1rem);
+  transition: all 0.3s ease-in-out;
+}
+@media (min-width: 768px) {
+  .box-form button[type=submit]:hover img {
+    transform: translateX(2rem);
+    transition: all 0.3s ease-in-out;
+  }
+}
+.box-form .sucess {
+  display: none;
+  opacity: 0;
+  transform: translateX(-200%);
+  transition: 0.5s ease;
+}
+.box-form .sucess.active {
+  display: block;
+  height: inherit;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}/*# sourceMappingURL=style.css.map */

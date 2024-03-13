@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo_ablab.png">
+    
+    <link rel="stylesheet" href="src/css/style.css">
+    
+    <title>a/b*lab</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="contents content-1">
+            <img class="xxv " src="src/img/xxv.png" alt="a/b*lab">
+            
+        </div>
+        <div class="contents content-2">
+            <img class="logoAB" src="src/img/logo_ablab.png" alt="a/b*lab">
+            <div class="contentAB">
+                <div class="contentAnimated">
+                    <img class="logoCenter" src="src/img/ab.png" alt="a/b*lab">
+                    <img class="arrows arrowt" src="src/img/arrowt.png" alt="Arrow Top">
+                    <img class="arrows arrowb" src="src/img/arrowb.png" alt="Arrow Bottom">
+                </div>
+            </div>
+        </div>
+        <div class="contents content-3">
+            <h1>creative<span>believers</span></h1>
+        </div>
+        <div class="contents content-4">
+            <p class="medium p-1 text-center">Para falar com nosso time comercial <br />preencha os campos abaixo:</p>
+        </div>
+        <div class="contents content-5">
+            <div class="box-form">
+                <form id="formMail" class="formMail">
+                    <div class="form-control">
+                        <input type="text" name="name" id="name" placeholder="insira seu nome">
+                        <input type="tel" class="phone" name="phone" id="phone" placeholder=" e o seu telefone">
+    
+                        <button type="submit"><img src="src/img/arrow_submit.png" alt=""></button>
+                    </div>
+                </form>
+    
+                <div class="sucess">
+                    <p class="medium text-center">
+                        Agradecemos seu interesse<br>Em breve entraremos em contato.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="contents content-6">
+            <p class="medium p-2">whatsapp <a class="contactLink" href="https://wa.me/5511999999999">+55 (11) 999 999 999</a></p>
+            <p class="medium p-3">e-mail <a class="contactLink" href="mailto:negocios@ablab.com.br">negocios@ablab.com.br</a></p>
+        </div>
+        <div class="contents content-7">
+            <p class="light p-4"><a class="contactLink address" href="https://maps.app.goo.gl/1FnUYWk61a5PB5YA7" target="_blank" rel="noopener noreferrer">Rua Cardeal Arcoverdte, 359 - 11º andar - Pinheiros</a></p>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="src/js/jquery.validate.min.js" ></script>
+    <script type="text/javascript" src="src/js/jquery.mask.js" ></script>
+
+    <script>
+        $(document).ready(function(){
+            
+            $(function(){
+                $('.phone').mask('(00) 00000-0000'); 
+            });
+    
+            setTimeout(() => {
+                setTimeout(() => {
+                    setTimeout(() => {
+                        $(".contents .logoAB").addClass("active");
+                    }, 200);
+                    $(".contentAB .logoCenter, .arrowt, .arrowb").addClass("active");
+                }, 200);
+                $(".xxv").addClass("active");
+            }, 200);
+
+            $("#formMail").submit(function (e) {
+                e.preventDefault();
+                
+                $(this).addClass("send");
+                setTimeout(() => {
+                    $(this).addClass("finish");
+                }, 300);
+
+                $(".sucess").show();
+                setTimeout(() => {
+                    $(".sucess").addClass("active");
+                }, 300);
+            });
+
+        })
+    </script>
+
+</body>
+</html>
