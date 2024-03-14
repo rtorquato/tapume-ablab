@@ -275,6 +275,8 @@ body {
 }
 .container .contents.content-2 .logoAB {
   width: auto;
+  -webkit-width: auto;
+  max-width: 74%;
   height: 19%;
   transition: 1s ease;
   transform: rotateX(90deg);
@@ -343,8 +345,8 @@ body {
   transition: 1s ease;
 }
 .container .contents.content-2 .contentAB .contentAnimated .arrows.arrowb.active {
-  bottom: -17.1%;
-  right: 50.2%;
+  bottom: -10.1%;
+  right: 57.2%;
   width: 23.2%;
   opacity: 1;
   transform: scale(1);
@@ -376,7 +378,7 @@ body {
 }
 @media (min-width: 769px) and (min-height: 901px) {
   .container .contents.content-3 h1 {
-    font-size: 3.75rem;
+    font-size: 3.45rem;
   }
 }
 .container .contents.content-3 h1 span {
@@ -528,7 +530,7 @@ body {
 }
 @media (min-width: 769px) and (min-height: 901px) {
   .box-form #formMail {
-    width: 100%;
+    width: 90%;
   }
 }
 .box-form #formMail.send {

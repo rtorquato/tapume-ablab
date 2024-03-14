@@ -89,6 +89,8 @@ body {
 
             .logoAB {
                 width: auto;
+                -webkit-width: auto;
+                max-width: 74%;
                 height: 19%;
                 transition: 1s ease;
                 transform: rotateX(90deg);                    
@@ -169,8 +171,8 @@ body {
                             transition: 1s ease;
         
                             &.active {
-                                bottom: -17.1%;
-                                right: 50.2%;
+                                bottom: -10.1%;
+                                right: 57.2%;
                                 width: 23.2%;
                                 opacity: 1;
                                 transform: scale(1);
@@ -205,7 +207,7 @@ body {
                 }
 
                 @media (min-width: 769px) and (min-height: 901px){
-                    font-size: 3.75rem;
+                    font-size: 3.45rem;
                 }
                 
                
@@ -367,7 +369,7 @@ body {
             width: 100%;
         }
         @media (min-width: 769px) and (min-height: 901px){
-            width: 100%;
+            width: 90%;
         }
 
         &.send {
