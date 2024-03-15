@@ -275,11 +275,15 @@ body {
 }
 .container .contents.content-2 .logoAB {
   width: auto;
-  -webkit-width: auto;
   max-width: 74%;
   height: 19%;
   transition: 1s ease;
   transform: rotateX(90deg);
+}
+@media (min-width: 359px) and (max-width: 389px) {
+  .container .contents.content-2 .logoAB {
+    width: 15.6rem;
+  }
 }
 .container .contents.content-2 .logoAB.active {
   transition: 1s ease;
@@ -299,6 +303,12 @@ body {
   height: 80%;
   display: flex;
   align-items: center;
+}
+@media (min-width: 359px) and (max-width: 389px) {
+  .container .contents.content-2 .contentAB .contentAnimated {
+    width: 15.6rem;
+    height: auto;
+  }
 }
 .container .contents.content-2 .contentAB .contentAnimated .logoCenter {
   width: 100%;

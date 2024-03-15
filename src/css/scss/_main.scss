@@ -89,11 +89,14 @@ body {
 
             .logoAB {
                 width: auto;
-                -webkit-width: auto;
                 max-width: 74%;
                 height: 19%;
                 transition: 1s ease;
                 transform: rotateX(90deg);                    
+
+                @media (min-width: 359px) and (max-width: 389px){
+                    width: 15.6rem;
+                }
                 
                 &.active {
                     transition: 1s ease;
@@ -120,6 +123,10 @@ body {
                     display: flex;
                     align-items: center;
                     
+                    @media (min-width: 359px) and (max-width: 389px){
+                        width: 15.6rem;
+                        height: auto;
+                    }
                     
                     .logoCenter {
                         width: 100%;
