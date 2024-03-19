@@ -15,20 +15,14 @@
 
         <div class="contents content-1">
             <img class="xxv " src="src/img/xxv.png" alt="a/b*lab">
-            
         </div>
+        
         <div class="contents content-2">
-            <img class="logoAB" src="src/img/logo_ablab.png" alt="a/b*lab">
-            <div class="contentAB">
-                <div class="contentAnimated">
-                    <img class="logoCenter" src="src/img/ab.png" alt="a/b*lab">
-                    <img class="arrows arrowt" src="src/img/arrowt.png" alt="Arrow Top">
-                    <img class="arrows arrowb" src="src/img/arrowb.png" alt="Arrow Bottom">
-                </div>
-            </div>
+            <img class="logoCenter" src="src/img/ablab-full.png" alt="a/b*lab">            
         </div>
-        <div class="contents content-3">
-            <h1>creative<span>believers</span></h1>
+
+        <div class="contents content-3"> 
+            <h1 class="textoTroca">business<span>driven</span></h1>
         </div>
         <div class="contents content-4">
             <p class="medium p-1 text-center">Para falar com nosso time comercial <br />preencha os campos abaixo:</p>
@@ -37,10 +31,10 @@
             <div class="box-form">
                 <form id="formMail" class="formMail">
                     <div class="form-control">
-                        <input type="text" name="name" id="name" placeholder="insira seu nome">
-                        <input type="tel" class="phone" name="phone" id="phone" placeholder=" e o seu telefone">
+                        <input type="text" name="nome_completo" id="nomeCompleto" placeholder="insira seu nome">
+                        <input type="tel" class="phone" name="tel_comercial" id="telComercial" placeholder=" e o seu telefone">
     
-                        <button type="submit"><img src="src/img/arrow_submit.png" alt=""></button>
+                        <button id="submit" type="submit"><img src="src/img/arrow_submit.png" alt=""></button>
                     </div>
                 </form>
     
@@ -71,32 +65,68 @@
             $(function(){
                 $('.phone').mask('(00) 00000-0000'); 
             });
-    
-            setTimeout(() => {
-                setTimeout(() => {
-                    setTimeout(() => {
-                        $(".contents .logoAB").addClass("active");
-                    }, 200);
-                    $(".contentAB .logoCenter, .arrowt, .arrowb").addClass("active");
-                }, 200);
-                $(".xxv").addClass("active");
-            }, 200);
 
-            $("#formMail").submit(function (e) {
-                e.preventDefault();
-                
-                $(this).addClass("send");
-                setTimeout(() => {
-                    $(this).addClass("finish");
-                }, 300);
+            $(function() {
+                var textos = ["business<span>driven</span>", "tech<span>based</span>", "creative<span>believers</span>"];
+                var indice = 0;
 
-                $(".sucess").show();
-                setTimeout(() => {
-                    $(".sucess").addClass("active");
-                }, 300);
+                setInterval(function() {
+                    $('.textoTroca').fadeOut('slow', function() {
+                    $(this).html(textos[indice]).fadeIn('slow');
+                    });
+                    indice = (indice + 1) % textos.length;
+                }, 5000);
             });
 
-        })
+
+
+            $('#submit').on('click', function() {
+                
+                var nome = $('#nomeCompleto');
+                var telefone = $('#telComercial');
+
+                var form = new FormData();
+
+                form.append('nome_completo', nome.val());
+                form.append('tel_comercial', telefone.val());
+                
+
+                var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "sendmail.php",
+                "method": "POST",
+                "headers": {},
+                "processData": false,
+                "contentType": false,
+                "mimeType": "multipart/form-data",
+                "data": form
+                };
+
+                if( nome.val().length >= 3 && telefone.val().length >= 11) {
+                $('#formMail').hide();
+                
+                $.ajax(settings).done(function (response) {
+                    nome.val('');
+                    telefone.val('');
+
+                    $('.success').show();
+                    setTimeout(() => {
+                        $(".sucess").addClass("active");
+                    }, 300);
+                });
+
+                } else if(nome.val().length <= 3) {
+                nome.addClass('error');
+                } else if(telefone.val().length <= 11) {
+                telefone.addClass('error');
+                } else {
+                nome.addClass('error');
+                telefone.addClass('error');
+                }
+            })
+        });
+
     </script>
 
 </body>
