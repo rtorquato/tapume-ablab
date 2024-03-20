@@ -9,12 +9,12 @@ $(document).ready(function(){
     $('#submit').on('click', function() {
         
         var nome = $('#nomeCompleto');
-        var telefone = $('#telComercial');
+        var email = $('#emailComercial');
 
         var form = new FormData();
 
         form.append('nome_completo', nome.val());
-        form.append('tel_comercial', telefone.val());
+        form.append('email_comercial', email.val());
         
 
         var settings = {
@@ -29,12 +29,12 @@ $(document).ready(function(){
         "data": form
         };
 
-        if( nome.val().length >= 3 && telefone.val().length >= 11) {
+        if( nome.val().length >= 3 && email.val().length >= 11) {
         $('#formMail').hide();
         
         $.ajax(settings).done(function (response) {
             nome.val('');
-            telefone.val('');
+            email.val('');
 
             $('.success').show();
             setTimeout(() => {
@@ -44,29 +44,14 @@ $(document).ready(function(){
 
         } else if(nome.val().length <= 3) {
         nome.addClass('error');
-        } else if(telefone.val().length <= 11) {
-        telefone.addClass('error');
+        } else if(email.val().length <= 11) {
+        email.addClass('error');
         } else {
         nome.addClass('error');
-        telefone.addClass('error');
+        email.addClass('error');
         }
     })
 
-    // var textos1 = ["business","tech", "creative"];
-    // var textos2 = ["driven","based","believers"];
-    // var indice1 = 0;
-    // var indice2 = 0;
-
-    // setInterval(function() {
-    //     $('.msg1 .parte1').fadeOut('slow', function() {
-    //         $(this).html(textos1[indice1]).fadeIn('slow');
-    //     });
-    //     $('.msg1 .parte2').fadeOut('slow', function() {
-    //         $(this).html(textos2[indice2]).fadeIn('slow');
-    //     });
-    //     indice1 = (indice1 + 1) % textos1.length;
-    //     indice2 = (indice2 + 1) % textos1.length;
-    // }, 5000);
 
     $(function() {
 
