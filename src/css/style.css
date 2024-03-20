@@ -273,7 +273,9 @@ body {
 }
 .container .contents.content-2 .logoCenter {
   margin: auto;
-  width: 70%;
+  width: auto;
+  min-width: 340px;
+  max-width: 635px;
   height: 100%;
 }
 @media (min-width: 769px) and (max-height: 900px) {
@@ -327,10 +329,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   top: 50%;
-  transition: all 1s ease;
+  transition: all 0.7s ease;
 }
 .container .contents.content-3 .title .msgs .parte1 {
-  transition: all 1s ease;
+  transition: all 0.7s ease;
   display: inline-block;
 }
 .container .contents.content-3 .title .msgs .parte1.active {
@@ -342,7 +344,7 @@ body {
   display: inline-block;
 }
 .container .contents.content-3 .title .msgs .parte2 {
-  transition: all 1s ease;
+  transition: all 0.7s ease;
   display: inline-block;
 }
 .container .contents.content-3 .title .msgs .parte2.active {

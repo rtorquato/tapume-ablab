@@ -84,7 +84,9 @@ body {
                         
             .logoCenter {
                 margin: auto;
-                width: 70%;
+                width: auto;
+                min-width: 340px;
+                max-width: 635px;
                 height: 100%;
 
                 @media (min-width: 769px) and (max-height: 900px){
@@ -141,12 +143,12 @@ body {
                     left: 50%;
                     transform: translate(-50%, -50%);
                     top: 50%;
-                    -webkit-transition: all 1s ease;
-                    transition: all 1s ease;
+                    -webkit-transition: all .7s ease;
+                    transition: all .7s ease;
 
                     .parte1 {
-                        -webkit-transition: all 1s ease;
-                        transition: all 1s ease;
+                        -webkit-transition: all .7s ease;
+                        transition: all .7s ease;
                         display: inline-block;
                         &.active {
                             -webkit-transform: translateY(0);
@@ -160,8 +162,8 @@ body {
                         }
                     }
                     .parte2 {
-                        -webkit-transition: all 1s ease;
-                        transition: all 1s ease;
+                        -webkit-transition: all .7s ease;
+                        transition: all .7s ease;
                         display: inline-block;
                         &.active {
                             -webkit-transform: translateY(0);
