@@ -84,19 +84,18 @@ body {
                         
             .logoCenter {
                 margin: auto;
-                min-width: 340px;
                 max-width: 100%;
-                max-height: 100%;
+                height: calc((100%/100)*98);
 
-                @media (min-width: 769px) and (max-height: 900px){
-                    max-width: 434px;
+                // @media (min-width: 769px) and (max-height: 900px){
+                //     max-width: 434px;
                     
-                }
-                @media (min-width: 769px) and (min-height: 901px){
-                    width: auto;
-                    max-width: 634px;
-                    max-height: 100%;
-                }
+                // }
+                // @media (min-width: 769px) and (min-height: 901px){
+                //     width: auto;
+                //     max-width: 634px;
+                //     max-height: 100%;
+                // }
             }
         }
         &.content-3 {
@@ -234,7 +233,7 @@ body {
                 }
             }
 
-            .sucess {
+            .success {
                 padding: 2rem 0;
                 opacity: 0;
                 height: 0;
@@ -435,7 +434,7 @@ body {
         }
     }
     
-    .sucess {
+    .success {
         display: none;
         opacity: 0;
         transform: translateX(-200%);

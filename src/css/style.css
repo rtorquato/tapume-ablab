@@ -273,21 +273,8 @@ body {
 }
 .container .contents.content-2 .logoCenter {
   margin: auto;
-  min-width: 340px;
   max-width: 100%;
-  max-height: 100%;
-}
-@media (min-width: 769px) and (max-height: 900px) {
-  .container .contents.content-2 .logoCenter {
-    max-width: 434px;
-  }
-}
-@media (min-width: 769px) and (min-height: 901px) {
-  .container .contents.content-2 .logoCenter {
-    width: auto;
-    max-width: 634px;
-    max-height: 100%;
-  }
+  height: 98%;
 }
 .container .contents.content-3 {
   height: calc(1% * var(--row3));
@@ -407,14 +394,14 @@ body {
 .container .contents.content-5 p.medium {
   font-family: var(--font-regular);
 }
-.container .contents.content-5 .sucess {
+.container .contents.content-5 .success {
   padding: 2rem 0;
   opacity: 0;
   height: 0;
   transform: translateX(-100%);
   transition: 0.5s ease;
 }
-.container .contents.content-5 .sucess.active {
+.container .contents.content-5 .success.active {
   height: inherit;
   opacity: 1;
   transform: translateX(0);
@@ -605,13 +592,13 @@ body {
     transition: all var(--time-Animate) ease-in-out;
   }
 }
-.box-form .sucess {
+.box-form .success {
   display: none;
   opacity: 0;
   transform: translateX(-200%);
   transition: 0.5s ease;
 }
-.box-form .sucess.active {
+.box-form .success.active {
   display: block;
   height: inherit;
   opacity: 1;
